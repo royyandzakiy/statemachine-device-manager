@@ -106,6 +106,6 @@
 		"xtr1common": "cpp",
 		"xtree": "cpp"
 	},
-	"C_Cpp.default.cppStandard": "c++23",
+	"C_Cpp.default.cppStandard": "c++17",
 	"iis.configDir": ""
 }
