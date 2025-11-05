@@ -3,7 +3,7 @@
 	"configurePresets": [
 		{
 			"name": "default",
-			"inherits": "windows-base",
+			"inherits": "debug-msvc",
 			"environment": {
 				"VCPKG_ROOT": "C:/vcpkg"
 			}

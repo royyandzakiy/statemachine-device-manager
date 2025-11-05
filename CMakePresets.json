@@ -7,7 +7,7 @@
 	},
 	"configurePresets": [
 		{
-			"name": "windows-base",
+			"name": "debug-msvc",
 			"description": "Windows development configuration with Visual Studio 2022",
 			"generator": "Visual Studio 17 2022",
 			"binaryDir": "${sourceDir}/build/${presetName}",
@@ -28,9 +28,9 @@
 			}
 		},
 		{
-			"name": "windows-release",
+			"name": "release-msvc",
 			"description": "Windows release build with optimizations",
-			"inherits": "windows-base",
+			"inherits": "debug-msvc",
 			"cacheVariables": {
 				"CMAKE_BUILD_TYPE": "Release"
 			}
@@ -38,38 +38,28 @@
 	],
 	"buildPresets": [
 		{
-			"name": "windows-debug",
+			"name": "debug-msvc",
 			"description": "Build Windows debug configuration",
-			"configurePreset": "windows-base",
+			"configurePreset": "debug-msvc",
 			"configuration": "Debug"
 		},
 		{
-			"name": "windows-release",
+			"name": "release-msvc",
 			"description": "Build Windows release configuration",
-			"configurePreset": "windows-release",
+			"configurePreset": "release-msvc",
 			"configuration": "Release"
 		},
 		{
 			"name": "windows-clean-build",
 			"description": "Clean rebuild for Windows",
-			"configurePreset": "windows-base",
+			"configurePreset": "debug-msvc",
 			"cleanFirst": true
 		},
 		{
 			"name": "windows-verbose",
 			"description": "Verbose build output for debugging",
-			"configurePreset": "windows-base",
+			"configurePreset": "debug-msvc",
 			"verbose": true
-		}
-	],
-	"testPresets": [
-		{
-			"name": "windows-test",
-			"description": "Run tests on Windows",
-			"configurePreset": "windows-base",
-			"output": {
-				"outputOnFailure": true
-			}
 		}
 	]
 }
